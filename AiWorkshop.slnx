@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AiWorkshop.Inventory.Tests/AiWorkshop.Inventory.Tests.csproj" />
+  <Project Path="AiWorkshop.Inventory/AiWorkshop.Inventory.csproj" />
+</Solution>
