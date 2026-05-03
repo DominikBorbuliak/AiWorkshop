@@ -82,6 +82,8 @@ The key idea is that you give the AI agent **one prompt** to kick off the entire
 
 You will end up with **1 branch**, **10 commits** (one per warning), and **1 Pull Request**.
 
+> **On approvals & permissions:** The AI may pause and ask you to approve certain actions (e.g. creating branches, pushing commits, opening PRs). You can approve these manually as they come up. In an ideal setup, though, you would configure the agent's permissions upfront — granting it access to create branches, commit, push, and open PRs, while keeping it scoped to non-destructive operations (no force-pushes, no deletions, no merging without review) — so it can complete the entire cycle autonomously.
+
 ---
 
 ## Tips for Reviewing the AI's Work
