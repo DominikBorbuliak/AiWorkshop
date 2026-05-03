@@ -26,14 +26,18 @@ foreach (var product in service.GetAll())
 
 Console.WriteLine();
 Console.WriteLine("Low stock products (< 10 units):");
-foreach (var product in report.GetLowStockProducts(service.GetAll()))
+var lowStockProducts = report.GetLowStockProducts(service.GetAll());
+foreach (var product in lowStockProducts)
 {
     Console.WriteLine($"  {product.Name} — {product.Stock} left");
 }
 
 Console.WriteLine();
 Console.WriteLine("Discounts on Electronics (10%):");
-foreach (var product in service.GetAll().Where(p => p.Category?.Name == "Electronics"))
+var electronicsProducts = service
+    .GetAll()
+    .Where(p => p.Category?.Name == "Electronics");
+foreach (var product in electronicsProducts)
 {
     var discounted = calculator.GetDiscountedPrice(product, 0.10m);
     Console.WriteLine($"  {product.Name}: {product.Price:C} → {discounted:C}");

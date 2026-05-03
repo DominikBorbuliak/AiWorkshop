@@ -5,10 +5,7 @@ namespace AiWorkshop.Inventory.Services;
 public class DiscountCalculator
 {
     [Obsolete("Use CalculateDiscount(decimal price, decimal rate) instead.")]
-    public decimal ApplyDiscount(Product product, decimal rate)
-    {
-        return product.Price * (1 - rate);
-    }
+    public decimal ApplyDiscount(Product product, decimal rate) => product.Price * (1 - rate);
 
     public decimal CalculateDiscount(decimal price, decimal rate)
     {
@@ -16,10 +13,7 @@ public class DiscountCalculator
         return price * rate;
     }
 
-    public decimal GetDiscountedPrice(Product product, decimal rate)
-    {
-        return ApplyDiscount(product, rate);
-    }
+    public decimal GetDiscountedPrice(Product product, decimal rate) => ApplyDiscount(product, rate);
 
     public bool IsEligibleForDiscount(Product product)
     {

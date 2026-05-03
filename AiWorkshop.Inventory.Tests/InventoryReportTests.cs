@@ -67,12 +67,12 @@ public class InventoryReportTests
     [Fact]
     public void GetLowStockProducts_ReturnsOnlyProductsBelowThreshold()
     {
-        var products = new List<Product>
-        {
+        List<Product> products =
+        [
             new() { Id = 1, Name = "A", Price = 10m, Stock = 3 },
             new() { Id = 2, Name = "B", Price = 20m, Stock = 15 },
             new() { Id = 3, Name = "C", Price = 30m, Stock = 7 },
-        };
+        ];
 
         var result = _report.GetLowStockProducts(products).ToList();
 
