@@ -6,7 +6,7 @@ public class InventoryReport
 {
     public string GetCategoryName(Product product)
     {
-        string categoryName = product.Category?.Name;
+        string? categoryName = product.Category?.Name;
         return categoryName ?? "Uncategorized";
     }
 
