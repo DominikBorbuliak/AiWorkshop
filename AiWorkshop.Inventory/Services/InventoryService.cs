@@ -30,7 +30,7 @@ public class InventoryService
 
     private void ApplyCategory(Product product, Category category) => product.Category = category;
 
-    public void ClearProductName(Product product) => product.Name = null;
+    public void ClearProductName(Product product) => product.Name = string.Empty;
 
     public Product? GetById(int id) => _products.FirstOrDefault(p => p.Id == id);
 
