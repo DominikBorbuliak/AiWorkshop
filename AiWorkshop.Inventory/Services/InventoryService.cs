@@ -16,17 +16,17 @@ public class InventoryService
                 ?? throw new InvalidOperationException($"Product with id {id} not found.");
             _products.Remove(product);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             Console.WriteLine("Product not found.");
         }
     }
 
-    public void AssignCategory(Product? product, Category category) => ApplyCategory(product, category);
+    public void AssignCategory(Product product, Category category) => ApplyCategory(product, category);
 
     private void ApplyCategory(Product product, Category category) => product.Category = category;
 
-    public void ClearProductName(Product product) => product.Name = null;
+    public void ClearProductName(Product product) => product.Name = string.Empty;
 
     public Product? GetById(int id) => _products.FirstOrDefault(p => p.Id == id);
 

@@ -9,15 +9,13 @@ public class DiscountCalculator
 
     public decimal CalculateDiscount(decimal price, decimal rate)
     {
-        var markup = 0.05m;
         return price * rate;
     }
 
-    public decimal GetDiscountedPrice(Product product, decimal rate) => ApplyDiscount(product, rate);
+    public decimal GetDiscountedPrice(Product product, decimal rate) => product.Price * (1 - rate);
 
     public bool IsEligibleForDiscount(Product product)
     {
         return product.Stock > 10;
-        Console.WriteLine($"Eligibility checked for {product.Name}");
     }
 }
