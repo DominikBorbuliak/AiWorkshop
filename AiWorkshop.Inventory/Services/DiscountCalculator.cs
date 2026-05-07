@@ -12,7 +12,8 @@ public class DiscountCalculator
         return price * rate;
     }
 
-    public decimal GetDiscountedPrice(Product product, decimal rate) => ApplyDiscount(product, rate);
+    public decimal GetDiscountedPrice(Product product, decimal rate) =>
+        product.Price - CalculateDiscount(product.Price, rate);
 
     public bool IsEligibleForDiscount(Product product)
     {
