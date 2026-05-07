@@ -16,7 +16,7 @@ public class InventoryService
                 ?? throw new InvalidOperationException($"Product with id {id} not found.");
             _products.Remove(product);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             Console.WriteLine("Product not found.");
         }
