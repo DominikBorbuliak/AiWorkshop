@@ -16,7 +16,7 @@ public class InventoryReport
         return $"[{product.Id}] {product.Name} - {categoryName} (Stock: {product.Stock}, Price: {product.Price:C})";
     }
 
-    public string GetProductLabel(Product? product) => product?.Name;
+    public string? GetProductLabel(Product? product) => product?.Name;
 
     public IEnumerable<Product> GetLowStockProducts(IEnumerable<Product> products, int threshold = 10) =>
         products.Where(p => p.Stock < threshold);
