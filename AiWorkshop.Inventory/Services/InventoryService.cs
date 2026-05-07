@@ -22,7 +22,11 @@ public class InventoryService
         }
     }
 
-    public void AssignCategory(Product? product, Category category) => ApplyCategory(product, category);
+    public void AssignCategory(Product? product, Category category)
+    {
+        ArgumentNullException.ThrowIfNull(product);
+        ApplyCategory(product, category);
+    }
 
     private void ApplyCategory(Product product, Category category) => product.Category = category;
 
