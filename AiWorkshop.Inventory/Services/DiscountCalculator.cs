@@ -18,6 +18,5 @@ public class DiscountCalculator
     public bool IsEligibleForDiscount(Product product)
     {
         return product.Stock > 10;
-        Console.WriteLine($"Eligibility checked for {product.Name}");
     }
 }
