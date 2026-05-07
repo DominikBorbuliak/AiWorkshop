@@ -12,7 +12,7 @@ public class InventoryReport
 
     public string GenerateSummary(Product product)
     {
-        var categoryName = product.Category.Name;
+        var categoryName = product.Category?.Name ?? "Uncategorized";
         return $"[{product.Id}] {product.Name} - {categoryName} (Stock: {product.Stock}, Price: {product.Price:C})";
     }
 
