@@ -9,7 +9,6 @@ public class DiscountCalculator
 
     public decimal CalculateDiscount(decimal price, decimal rate)
     {
-        var markup = 0.05m;
         return price * rate;
     }
 
